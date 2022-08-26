@@ -1,5 +1,7 @@
 # react-native-pointclick-rn
+
 pointclick
+
 ## Installation
 
 ```sh
@@ -9,11 +11,14 @@ npm install react-native-pointclick-rn
 ## Usage
 
 ```js
-import { multiply } from "react-native-pointclick-rn";
+import { showOfferwall } from 'react-native-pointclick-rn';
 
 // ...
 
-const result = await multiply(3, 7);
+const result = await showOfferwall('test', {
+  placementUid: '2',
+  pickerUid: 'wook101',
+});
 ```
 
 ## Contributing
