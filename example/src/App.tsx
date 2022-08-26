@@ -1,18 +1,19 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-pointclick-rn';
+import { Button, StyleSheet, View } from 'react-native';
+import { showOfferwall } from 'react-native-pointclick-rn';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button
+        title="test1"
+        onPress={() => {
+          showOfferwall('test', { placementUid: '2', pickerUid: 'wook101' });
+        }}
+      >
+        test
+      </Button>
     </View>
   );
 }

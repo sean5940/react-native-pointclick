@@ -6,7 +6,9 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const PointclickRn = NativeModules.PointclickRn  ? NativeModules.PointclickRn  : new Proxy(
+const PointclickRn = NativeModules.PointclickRn
+  ? NativeModules.PointclickRn
+  : new Proxy(
       {},
       {
         get() {
@@ -15,6 +17,10 @@ const PointclickRn = NativeModules.PointclickRn  ? NativeModules.PointclickRn  :
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return PointclickRn.multiply(a, b);
+export interface adInfo {
+  placementUid: string;
+  pickerUid: string;
+}
+export function showOfferwall(title: String, adInfo: adInfo): void {
+  return PointclickRn.showOfferwall(title, adInfo);
 }
