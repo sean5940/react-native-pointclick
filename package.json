@@ -1,6 +1,6 @@
 {
   "name": "react-native-pointclick-rn",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "pointclick",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
