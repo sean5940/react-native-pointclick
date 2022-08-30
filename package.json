@@ -1,6 +1,6 @@
 {
   "name": "react-native-pointclick-rn",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "pointclick",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -34,13 +34,7 @@
     "react-native",
     "android"
   ],
-  "repository": "https://github.com/SungilJung/react-native-pointclick-rn",
-  "author": "green5940 <green5940@gmail.com> (https://github.com/SungilJung)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SungilJung/react-native-pointclick-rn/issues"
-  },
-  "homepage": "https://github.com/SungilJung/react-native-pointclick-rn#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

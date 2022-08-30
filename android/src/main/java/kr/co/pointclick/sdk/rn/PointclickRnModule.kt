@@ -32,7 +32,10 @@ class PointclickRnModule(reactContext: ReactApplicationContext) :
   }
 
   override fun invalidate() {
+     Log.d(TAG, "call invalidate()")
+
     reactApplicationContext.unregisterReceiver(packageReceiver)
+    super.invalidate()
   }
 
   @ReactMethod
