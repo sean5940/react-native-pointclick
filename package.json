@@ -1,5 +1,5 @@
 {
-  "name": "react-native-pointclick-rn",
+  "name": "@doohub/react-native-pointclick-rn",
   "version": "0.1.8",
   "description": "pointclick",
   "main": "lib/commonjs/index",
