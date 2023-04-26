@@ -5,7 +5,7 @@ pointclick
 ## Installation
 
 ```sh
-yarn install react-native-pointclick-rn
+yarn add react-native-pointclick-rn
 ```
 
 ## Usage
