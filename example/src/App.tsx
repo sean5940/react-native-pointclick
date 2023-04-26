@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Button, StyleSheet, View } from 'react-native';
-import { showOfferwall } from 'react-native-pointclick-rn';
+import { showOfferwall } from '@doohub/react-native-pointclick-rn';
 
 export default function App() {
   return (
