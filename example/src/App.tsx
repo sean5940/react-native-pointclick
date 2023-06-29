@@ -1,19 +1,39 @@
+import {
+  FloatingBtnTemplate,
+  PointClickOfferwall,
+  PointClickAd,
+  PointClickFloatingCPC,
+} from '@doohub/react-native-pointclick-rn';
 import * as React from 'react';
+import { useEffect } from 'react';
 
 import { Button, StyleSheet, View } from 'react-native';
-import { showOfferwall } from '@doohub/react-native-pointclick-rn';
 
 export default function App() {
+  useEffect(() => {
+    PointClickAd.init({ placementUid: '2', pickerUid: 'wook101' });
+  }, []);
+
   return (
     <View style={styles.container}>
       <Button
-        title="test1"
+        title="show offerwall"
         onPress={() => {
-          showOfferwall('test', { placementUid: '2', pickerUid: 'wook101' });
+          PointClickOfferwall.showOfferwall('test');
         }}
-      >
-        test
-      </Button>
+      />
+
+      <View style={styles.buttonContainer}>
+        <Button
+          title="show floating cpc"
+          onPress={() => {
+            PointClickFloatingCPC.showFloatingCPC(
+              'test',
+              FloatingBtnTemplate.FLOATING_BTN_ORANGE
+            );
+          }}
+        />
+      </View>
     </View>
   );
 }
@@ -23,10 +43,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'pink',
   },
-  box: {
-    width: 60,
-    height: 60,
+  buttonContainer: {
     marginVertical: 20,
   },
 });

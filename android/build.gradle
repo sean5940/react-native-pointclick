@@ -144,7 +144,7 @@ dependencies {
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   // PointClick Maven Remote Repo
-  implementation 'kr.co.pointclick.sdk.offerwall:pointclick-sdk-offerwall-jdk1.8:1.0.16'
+  implementation 'kr.co.pointclick.sdk.offerwall:pointclick-sdk-offerwall:1.0.17'
 
   // From node_modules
 }

@@ -8,10 +8,14 @@ import com.facebook.react.uimanager.ReactShadowNode
 import com.facebook.react.uimanager.ViewManager
 
 
-class PointclickRnPackage : ReactPackage {
+class PointClickPackage : ReactPackage {
   override fun createNativeModules(
     reactContext: ReactApplicationContext
-  ): MutableList<NativeModule> = listOf(PointclickRnModule(reactContext)).toMutableList()
+  ): MutableList<NativeModule> = listOf(
+    PointClickAdModule(reactContext),
+    PointClickOfferwallModule(reactContext),
+    PointClickFloatingCPCModule(reactContext)
+  ).toMutableList()
 
   override fun createViewManagers(
     reactContext: ReactApplicationContext

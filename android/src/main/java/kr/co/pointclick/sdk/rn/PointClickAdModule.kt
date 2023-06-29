@@ -3,6 +3,7 @@ package kr.co.pointclick.sdk.rn
 import android.content.Intent
 import android.content.IntentFilter
 import android.util.Log
+import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
@@ -10,12 +11,12 @@ import com.facebook.react.bridge.ReadableMap
 import kr.co.pointclick.sdk.offerwall.core.PointClickAd
 import kr.co.pointclick.sdk.offerwall.core.events.PackageReceiver
 
-class PointclickRnModule(reactContext: ReactApplicationContext) :
+class PointClickAdModule(reactContext: ReactApplicationContext) :
   ReactContextBaseJavaModule(reactContext) {
   private lateinit var packageReceiver: PackageReceiver
 
   override fun getName(): String {
-    return "PointclickRn"
+    return "PointClickAdModule"
   }
 
   override fun initialize() {
@@ -32,28 +33,22 @@ class PointclickRnModule(reactContext: ReactApplicationContext) :
   }
 
   override fun invalidate() {
-     Log.d(TAG, "call invalidate()")
+     Log.d(name, "call invalidate()")
 
     reactApplicationContext.unregisterReceiver(packageReceiver)
     super.invalidate()
   }
 
   @ReactMethod
-  fun showOfferwall(title: String, adInfo: ReadableMap) {
-    Log.d(TAG, title);
-    adInfo.getString("placementUid")?.let { Log.d(TAG, it) };
-    adInfo.getString("pickerUid")?.let { Log.d(TAG, it) };
+  fun init(adInfo: ReadableMap, promise: Promise) {
+    adInfo.getString("placementUid")?.let { Log.d(name, it) };
+    adInfo.getString("pickerUid")?.let { Log.d(name, it) };
 
     var placementUid = adInfo.getString("placementUid");
     var pickerUid = adInfo.getString("pickerUid");
 
     PointClickAd.init(placementUid, pickerUid);
 
-    PointClickAd.showOfferwall(currentActivity, title);
+    promise.resolve(null)
   }
-
-  companion object {
-    private const val TAG = "PointclickRnModule";
-  }
-
 }
